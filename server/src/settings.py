@@ -135,3 +135,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Exceptions handler
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'src.apps.core.exceptions.core_exception_handler',
+    'NON_FIELD_ERRORS_KEY': 'error',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'src.apps.authentication.backends.JWTAuthentication',
+    ),
+}
